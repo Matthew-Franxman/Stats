@@ -2,10 +2,16 @@ package main
 
 import "fmt"
 
+//an interface tells all of the structs in a package that they must have specific methods associated with them
+//the specific interface 'Player' requires all structs to have a 'returnStats()' method
+
 //Player interface to kee track of player cards
 type Player interface {
 	returnStats() string
 }
+
+//a struct is virtually just a collection of varibales with associated methods
+//for example Baseball has four variables associated with it
 
 //Baseball player card
 type Baseball struct {
@@ -31,6 +37,8 @@ type Football struct {
 	Yards      int
 }
 
+//each of these structs have their own 'retrunStats()' method associated with them
+//since each of them has different
 func (b Baseball) returnStats() {
 	fmt.Printf("Name: %s\nNumber: %s\nBatting Average: %f\nRBI: %d", b.Name, b.Number, b.BattingAve, b.RBI)
 }
